@@ -1,0 +1,58 @@
+{
+  "id": "com.nicox.hermes-console",
+  "name": "Hermes Console",
+  "description": "投稿パネルから Hermes の会話設定と状態を操作する。モデル切替・会話リセット・コンテキスト圧縮・状態確認。",
+  "homepage_url": "https://github.com/skytog/mattermost-hermes-console",
+  "support_url": "https://github.com/skytog/mattermost-hermes-console/issues",
+  "version": "0.4.0",
+  "min_server_version": "11.0.0",
+  "server": {
+    "executables": {
+      "linux-amd64": "server/dist/plugin-linux-amd64"
+    }
+  },
+  "webapp": {
+    "bundle_path": "webapp/dist/main.js"
+  },
+  "settings_schema": {
+    "header": "Hermes Control Bridge への接続と、操作を許可するユーザー／チャンネルを設定します。",
+    "footer": "秘密情報はサーバー側のみで保持し、ブラウザーには返しません。",
+    "settings": [
+      {
+        "key": "BridgeURL",
+        "display_name": "Hermes Control Bridge URL",
+        "type": "text",
+        "help_text": "例: http://host.docker.internal:18066",
+        "default": ""
+      },
+      {
+        "key": "BridgeToken",
+        "display_name": "Bridge 認証情報",
+        "type": "text",
+        "help_text": "共有サービス認証。サーバー側のみで保持。",
+        "default": ""
+      },
+      {
+        "key": "AllowedUsers",
+        "display_name": "許可ユーザー",
+        "type": "text",
+        "help_text": "カンマ区切りの Mattermost user_id。未設定時は操作不可。",
+        "default": ""
+      },
+      {
+        "key": "AllowedChannels",
+        "display_name": "許可チャンネル",
+        "type": "text",
+        "help_text": "カンマ区切りの channel_id。未設定時は操作不可。",
+        "default": ""
+      },
+      {
+        "key": "HermesBotID",
+        "display_name": "Hermes Bot ID",
+        "type": "text",
+        "help_text": "既存連携との対応確認に使用。",
+        "default": ""
+      }
+    ]
+  }
+}

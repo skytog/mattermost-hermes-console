@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Node
+node_modules/
+webapp/dist/
+*.log
+
+# Go
+server/dist/
+
+# secrets
+.env
+!.env.example
+
+# editor / OS
+.DS_Store
+*.swp
+*.bak
+
+# built binaries
+server/server
+
+# yomiyasu check records
+.yomiyasu/
+.pytest_cache/
