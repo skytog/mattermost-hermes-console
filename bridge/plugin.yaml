@@ -1,0 +1,21 @@
+name: hermes-console-bridge
+version: 0.1.0
+description: >-
+  Hermes Control Bridge for the Mattermost Hermes Console. Runs in-process inside
+  the gateway, exposes a loopback read API for session state and model candidates,
+  and resolves Mattermost channel/thread targets through build_session_key().
+  Read-only in Step 2; operations (switch/reset/compress) arrive in Step 3.
+author: nicox
+kind: standalone
+requires_hermes: ">=0.21.6"
+provides_hooks:
+  - pre_gateway_dispatch
+optional_env:
+  - name: HERMES_CONSOLE_BRIDGE_HOST
+    description: "Bind host for the bridge API (default: 127.0.0.1)"
+  - name: HERMES_CONSOLE_BRIDGE_PORT
+    description: "Bind port for the bridge API (default: 18066)"
+requires_env:
+  - name: HERMES_CONSOLE_BRIDGE_TOKEN
+    description: "Shared service token the Mattermost Server Plugin presents"
+    password: true
